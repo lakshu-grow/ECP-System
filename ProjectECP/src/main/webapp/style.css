@@ -1,0 +1,982 @@
+/* ---------- COMMON ---------- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- LOGIN PAGE ---------- */
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 350px;
+    text-align: center;
+    margin: 80px auto;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.links {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px;
+    font-weight: bold;
+    display: none;
+}
+
+/* ---------- GLOBAL STYLES ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- REGISTER PAGE ---------- */
+.register-container {
+    background-color: #ffffff;
+    padding: 40px 35px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+    width: 400px;
+    margin: 100px auto;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.register-container h2 {
+    margin-bottom: 10px;
+    color: #007bff;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.register-container .subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.register-container label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.register-container input[type="text"],
+.register-container input[type="password"],
+.register-container input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.register-container input[type="text"]:focus,
+.register-container input[type="password"]:focus,
+.register-container input[type="email"]:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 6px rgba(0,123,255,0.5);
+    outline: none;
+}
+
+.register-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.register-container input[type="submit"]:hover {
+    background: linear-gradient(90deg, #0056b3, #0096d6);
+}
+
+.register-container .login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+}
+
+.register-container .login-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-container .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+
+/* ---------- FORGOT PASSWORD PAGE ---------- */
+.forgot-container {
+    background-color: #ffffff;
+    padding: 40px 35px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+    width: 400px;
+    margin: 100px auto;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.forgot-container h2 {
+    margin-bottom: 10px;
+    color: #007bff;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.forgot-container .subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.forgot-container label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.forgot-container input[type="text"],
+.forgot-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.forgot-container input[type="text"]:focus,
+.forgot-container input[type="password"]:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 6px rgba(0,123,255,0.5);
+    outline: none;
+}
+
+.forgot-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.forgot-container input[type="submit"]:hover {
+    background: linear-gradient(90deg, #0056b3, #0096d6);
+}
+
+.forgot-container .login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+}
+
+.forgot-container .login-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.forgot-container .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+   General Styles (Common to All)
+   ================================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+}
+
+a {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* ================================
+   Admin Dashboard Styles
+   ================================ */
+
+.admin-header {
+    background-color: #006699;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.admin-header a {
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+/* 🔥 Use grid instead of flex for auto wrap */
+.admin-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px; /* limit max width for nice look */
+  padding: 0 20px;   /* side padding */
+}
+
+.admin-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.admin-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.admin-card p {
+  color: #555;
+  font-size: 14px;
+}
+
+.admin-card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #0056b3;
+  font-weight: bold;
+}
+
+/* ================================
+   User Home Dashboard Styles
+   ================================= */
+.user-header {
+    background-color: #006699;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.user-header a {
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+.user-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 30px;
+}
+
+.user-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.user-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #006699;
+}
+
+.user-card p {
+    color: #555;
+    font-size: 14px;
+}
+
+.user-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+
+
+/* ==================================================
+   Attendance Page
+================================================== */
+
+.attendance-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 90%;
+  margin: 50px auto;   /* page center align */
+}
+
+.attendance-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.attendance-container label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.attendance-container input,
+.attendance-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.attendance-container button {
+  width: 100%;
+  padding: 12px;
+  background: #28a745; /* green button for Attendance */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.attendance-container button:hover {
+  background: #218838;
+}
+
+.view-attendance-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 90%;
+  margin: 50px auto;   /* page center align */
+}
+
+/* ================================
+   VIEW ATTENDANCE PAGE STYLES
+================================ */
+
+body.view-attendance-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f7f7f7;
+}
+
+.view-attendance-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.view-attendance-container input,
+.view-attendance-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* ================================
+   VIEW ATTENDANCE SERVLET PAGE
+================================ */
+
+body.attendance-view-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.attendance-view-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.attendance-table th,
+.attendance-table td {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+}
+
+.attendance-table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.attendance-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.attendance-table tr:hover {
+  background-color: #ddd;
+}
+
+
+/* ====================================
+   Competition Rules Page
+==================================== */
+
+body.competition-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.competition-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.competition-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.competition-form {
+  margin-bottom: 20px;
+}
+
+.competition-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.competition-form input,
+.competition-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.competition-form button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.competition-form button:hover {
+  background: #0056b3;
+}
+/* ====================================
+   View Competition Rules Page
+==================================== */
+
+body.view-competition-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.competition-view-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+}
+
+.competition-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.competition-table th,
+.competition-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+}
+
+.competition-table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.competition-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.competition-table tr:hover {
+  background-color: #ddd;
+}
+/* ================================
+   Cadet View Competition Rules
+================================ */
+body.cadet-competition-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.competition-view-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+}
+
+.competition-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.competition-table th,
+.competition-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+}
+
+.competition-table th {
+  background-color: #28a745; /* Green for cadet view */
+  color: #fff;
+}
+
+.competition-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.competition-table tr:hover {
+  background-color: #ddd;
+}
+
+/* ================================
+   Add Defence News Page
+================================ */
+body.news-add-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.news-form-container {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 500px;
+  width: 90%;
+}
+
+.news-form-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.news-form-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.news-form-container input[type="text"],
+.news-form-container textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.news-form-container button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.news-form-container button:hover {
+  background: #0056b3;
+}
+
+/* ================================
+   View Defence News Page
+================================ */
+body.news-view-page {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  padding: 40px;
+}
+
+.news-list-container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.news-list-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.news-item {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.news-item h3 {
+  margin: 0 0 10px;
+  color: #007bff;
+}
+
+.news-item p {
+  margin: 0 0 10px;
+  color: #555;
+}
+
+.news-date {
+  font-size: 0.85em;
+  color: #999;
+}
+
+/* ================================
+   Cadet Profile Page
+================================ */
+body.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.profile-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 500px;
+  width: 90%;
+  text-align: left;
+}
+
+.profile-form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.profile-container p {
+  margin: 10px 0;
+  font-size: 18px;
+} 
+
+/* ==================================================
+   Attendance Page Styling
+   ================================================== */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: #007bff;
+  color: #fff;
+}
+
+.present-btn {
+  background: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.absent-btn {
+  background: #dc3545;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.save-btn:hover {
+  background: #0056b3;
+}
+
+/* ==================================================
+   Competition Mark Page (Centered & Clean)
+================================================== */
+
+.competition-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 450px;
+  width: 90%;
+  margin: 80px auto;   /* page center align with top space */
+}
+
+.competition-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #222;
+}
+
+.competition-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.competition-container input,
+.competition-container select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.competition-container button {
+  width: 100%;
+  padding: 14px;
+  background: #007bff; /* bright blue button */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.competition-container button:hover {
+  background: #0056b3;
+}
+
+/* =====================================
+   Admin Panel Tables
+===================================== */
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #999;
+}
+
+th {
+  background: #003366;
+  color: #fff;
+  padding: 10px;
+}
+
+td {
+  padding: 8px;
+  text-align: center;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #003366;
+}

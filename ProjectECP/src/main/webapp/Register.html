@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        function validateForm() {
+            var uname = document.forms["registerForm"]["uname"].value.trim();
+            var regno = document.forms["registerForm"]["regno"].value.trim();
+            var email = document.forms["registerForm"]["email"].value.trim();
+            var pwd = document.forms["registerForm"]["pwd"].value;
+            var cpwd = document.forms["registerForm"]["cpwd"].value;
+
+            if (uname === "") {
+                alert("Please enter a username");
+                return false;
+            }
+            if (regno === "") {
+                alert("Please enter a Reg No");
+                return false;
+            }
+            if (email === "") {
+                alert("Please enter an Email");
+                return false;
+            }
+            if (pwd === "") {
+                alert("Please enter a password");
+                return false;
+            }
+            if (pwd.length < 5) {
+                alert("Password must be at least 5 characters");
+                return false;
+            }
+            if (pwd !== cpwd) {
+                alert("Passwords do not match");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Create Your Account</h2>
+        <p class="subtitle">Join as an NCC Cadet & stay connected</p>
+        <form name="registerForm" action="AddUserDetails" method="post" onsubmit="return validateForm();">
+
+            <label>Username</label>
+            <input type="text" name="uname" placeholder="Enter your full name" />
+
+            <label>Reg No</label>
+            <input type="text" name="regno" placeholder="Ex: NCC2025001" />
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="yourmail@example.com" />
+
+            <label>Password</label>
+            <input type="password" name="pwd" placeholder="Enter password" />
+
+            <label>Confirm Password</label>
+            <input type="password" name="cpwd" placeholder="Re-enter password" />
+
+            <input type="submit" value="Register Now" />
+        </form>
+        <p class="login-link">Already have an account? <a href="index.html">Login here</a></p>
+    </div>
+</body>
+</html>

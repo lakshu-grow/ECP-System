@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login Page</h2>
+
+    <!-- Error message div -->
+    <div id="errorMsg" class="error" style="display: none;">
+        Sorry, username or password is incorrect
+    </div>
+
+    <form action="Validation" onsubmit="return validateLogin();" method="post">
+        <input type="text" id="uname" name="uname" placeholder="Username">
+        <input type="password" id="pass" name="pwd" placeholder="Password">
+        <input type="submit" value="Login">
+    </form>
+
+    <div class="links">
+        <a href="Register.html">Register</a> |
+        <a href="ForgotPassword.html">Forgot Password?</a>
+    </div>
+</div>
+
+<script>
+    function validateLogin() {
+        var user = document.getElementById("uname").value.trim();
+        var pass = document.getElementById("pass").value.trim();
+
+        if (user === "") {
+            alert("Please enter username");
+            return false;
+        }
+        if (pass === "") {
+            alert("Please enter password");
+            return false;
+        }
+        return true;
+    }
+
+    // On page load, check for error in URL
+    window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("error") === "1") {
+            document.getElementById("errorMsg").style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
