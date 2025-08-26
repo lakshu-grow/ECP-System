@@ -1,0 +1,145 @@
+/* ===========================
+   Competition Pages Styling
+   Only applies to competition.html & competition_view.html
+=========================== */
+
+body.competition-page {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f6f9; /* soft grey background */
+  color: #333;
+}
+
+/* Common container styling */
+.competition-container, 
+.competition-view {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Heading */
+.competition-container h2,
+.competition-view h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #004080; /* Navy blue theme */
+}
+
+/* ===========================
+   Competition Grid (Competition.html)
+=========================== */
+.competition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Competition Card */
+.competition-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Hover effect */
+.competition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Image inside card */
+.competition-card img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Card title */
+.competition-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #222;
+}
+
+/* View button */
+.competition-card a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 14px;
+  background: #004080;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.competition-card a:hover {
+  background: #0066cc;
+}
+
+/* ===========================
+   Competition View (competition_view.html)
+=========================== */
+.competition-view h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+/* Rule Image */
+#ruleImage {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Source container (video/audio/pdf) */
+#sourceContainer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* File Upload Form (only for staff) */
+.competition-view form {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  text-align: center;
+  background: #fafafa;
+}
+
+/* File input */
+.competition-view form input[type="file"] {
+  margin: 10px 0;
+  padding: 5px;
+}
+
+/* Submit Button */
+.competition-view form button {
+  background: #004080;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.competition-view form button:hover {
+  background: #0066cc;
+}

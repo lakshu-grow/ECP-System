@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Competition View</title>
+  <link rel="stylesheet" href="competition.css">
+</head>
+<body>
+  <div class="competition-view">
+    <h2 id="compTitle"></h2>
+
+    <h3>Rules:</h3>
+    <img id="ruleImage" src="" width="400">
+
+    <h3>Source:</h3>
+    <div id="sourceContainer"></div>
+
+    <h3>Update Source (Staff Only)</h3>
+    <form action="UploadServlet" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="comp" id="compHidden">
+      <input type="file" name="file" required>
+      <button type="submit">Replace Source</button>
+    </form>
+  </div>
+
+  <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const comp = urlParams.get("comp");
+
+  const title = document.getElementById("compTitle");
+  const ruleImg = document.getElementById("ruleImage");
+  const sourceDiv = document.getElementById("sourceContainer");
+  const compHidden = document.getElementById("compHidden");
+
+  if (!comp) {
+    title.innerText = "Competition not found";
+  } else {
+    title.innerText = comp.toUpperCase() + " Competition";
+    ruleImg.src = `competitions/${comp}/rule.jpg`; // keep rule.jpg standard
+    compHidden.value = comp;
+  }
+
+  // Try to load whichever source exists
+  const candidates = [
+    { path: (c) => `competitions/${c}/source.mp4`, type: "video" },
+    { path: (c) => `competitions/${c}/source.pdf`, type: "pdf" },
+    { path: (c) => `competitions/${c}/source.jpg`, type: "image" },
+    { path: (c) => `competitions/${c}/source.png`, type: "image" },
+    { path: (c) => `competitions/${c}/source.mp3`, type: "audio" },
+  ];
+
+  function tryNext(i) {
+    if (i >= candidates.length) {
+      sourceDiv.innerHTML = "<p>No source file found. Please upload one.</p>";
+      return;
+    }
+    const candidate = candidates[i];
+    const url = candidate.path(comp);
+
+    // lightweight existence check by attempting to load a hidden <img>
+    // For non-images we still can do fetch HEAD, but many servers block. 
+    // We'll attempt rendering and onerror fallback.
+    let el;
+
+    if (candidate.type === "video") {
+      el = document.createElement("video");
+      el.width = 400;
+      el.controls = true;
+      const src = document.createElement("source");
+      src.src = url;
+      src.type = "video/mp4";
+      el.appendChild(src);
+      el.onerror = () => tryNext(i + 1);
+      el.onloadeddata = () => { sourceDiv.innerHTML = ""; sourceDiv.appendChild(el); };
+    } else if (candidate.type === "pdf") {
+      // <embed> doesn't fire onerror reliably; create <img> probe first:
+      fetch(url, { method: "HEAD" })
+        .then((r) => {
+          if (r.ok) {
+            const embed = document.createElement("embed");
+            embed.src = url;
+            embed.width = "600";
+            embed.height = "500";
+            sourceDiv.innerHTML = "";
+            sourceDiv.appendChild(embed);
+          } else {
+            tryNext(i + 1);
+          }
+        })
+        .catch(() => tryNext(i + 1));
+      return;
+    } else if (candidate.type === "image") {
+      el = document.createElement("img");
+      el.width = 400;
+      el.src = url;
+      el.onerror = () => tryNext(i + 1);
+      el.onload = () => { sourceDiv.innerHTML = ""; sourceDiv.appendChild(el); };
+    } else if (candidate.type === "audio") {
+      el = document.createElement("audio");
+      el.controls = true;
+      const src = document.createElement("source");
+      src.src = url;
+      src.type = "audio/mpeg";
+      el.appendChild(src);
+      el.onerror = () => tryNext(i + 1);
+      el.onloadeddata = () => { sourceDiv.innerHTML = ""; sourceDiv.appendChild(el); };
+    }
+
+    // If browser blocks error events early, also set a timeout
+    setTimeout(() => {
+      if (!sourceDiv.firstChild) tryNext(i + 1);
+    }, 1200);
+  }
+
+  tryNext(0);
+</script>
+
+</body>
+</html>
