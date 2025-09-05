@@ -1,0 +1,209 @@
+/* ==================================================
+   Attendance Page (Admin marking attendance)
+================================================== */
+.attendance-container {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  margin: 0;
+  padding: 0;
+}
+
+.attendance-container .container {
+  width: 80%;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.attendance-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.attendance-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.attendance-container th,
+.attendance-container td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.attendance-container th {
+  background: #007bff;
+  color: #fff;
+}
+
+.present-btn {
+  background: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.absent-btn {
+  background: #dc3545;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.save-btn:hover {
+  background: #0056b3;
+}
+
+/* ==================================================
+   View Attendance Page (Cadet view)
+================================================== */
+/* Login form style */
+.login-form {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.login-form input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+}
+.login-form button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #003366;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.login-form button:hover {
+    background: #0055aa;
+}
+
+.view-attendance-container {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.view-attendance-container .user-header {
+    background: #003366;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-attendance-container .user-header a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.view-attendance-container .user-header a:hover {
+    text-decoration: underline;
+}
+
+/* Attendance percentage circle with dual color */
+.view-attendance-container .circle {
+    --present: 0;
+    --absent: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #4caf50 calc(var(--present) * 1%),   /* Green for present */
+        #f44336 0 calc((var(--present) + var(--absent)) * 1%),  /* Red for absent */
+        #ddd 0
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* Inner white circle for clean text */
+.view-attendance-container .circle::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Text inside circle */
+.view-attendance-container .circle .circle-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.view-attendance-container .circle .circle-text span {
+    color: #f44336; /* red for absent text */
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Absent Dates title */
+.view-attendance-container .absent-title {
+    text-align: center;
+    margin-top: 20px;
+    color: #003366;
+}
+
+/* Absent dates table */
+.view-attendance-container table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 50%;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.view-attendance-container table,
+.view-attendance-container th,
+.view-attendance-container td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.view-attendance-container th {
+    background: #003366;
+    color: white;
+}
