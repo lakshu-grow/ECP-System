@@ -1,12 +1,14 @@
+
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Attendance Management</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="attendance.css">
 </head>
 <body>
+  <div class="attendance-container">
   <div class="container">
     <h1>Attendance Management</h1>
     <form action="AttendanceServlet" method="post">
@@ -24,7 +26,7 @@
               Class.forName("com.mysql.cj.jdbc.Driver");
               Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/corps","root","");
               Statement st = con.createStatement();
-              ResultSet rs = st.executeQuery("SELECT reg_no, cadet_name FROM cadet_details");
+              ResultSet rs = st.executeQuery("SELECT reg_no, cadet_name FROM cadet_details ORDER BY cadet_name ASC");
 
               while(rs.next()) {
                 String reg = rs.getString("reg_no");
@@ -51,7 +53,7 @@
       <button type="submit" class="save-btn">Save Attendance</button>
     </form>
   </div>
-
+</div>
   <script>
     function toggleStatus(btn, hiddenInput) {
       if (btn.innerText === "Present") {
